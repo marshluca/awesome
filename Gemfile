@@ -41,12 +41,13 @@ end
 group :development, :test do
   gem 'puma'
   gem 'guard-rspec'
-  gem 'rspec-rails', "~> 2.14.0"
-  gem 'factory_girl_rails', "~> 4.2.1"
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'factory_girl_rails', '~> 4.2.1'
 end
 
 group :test do
-  gem 'database_cleaner', "~> 1.1.1"
+  gem 'capybara', '~> 2.1.0'
+  gem 'database_cleaner', '~> 1.1.1'
 end
 
 group :production do
