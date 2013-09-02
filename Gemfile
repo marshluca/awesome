@@ -34,23 +34,8 @@ end
 
 group :development do
   gem 'mina'
-  gem 'debugger'               
-  gem 'quiet_assets'           
-end
-
-group :development, :test do
-  gem 'puma'
-  gem 'guard-rspec'
-  gem 'rspec-rails', "~> 2.13.2"
-  gem 'factory_girl_rails', "~> 4.2.1"
-end
-
-group :test do
-  gem 'database_cleaner', "~> 1.0.1"
-end
-
-group :production do
-  gem 'unicorn'
+  gem 'debugger'
+  gem 'quiet_assets'
 end
 
 group :development, :test do
