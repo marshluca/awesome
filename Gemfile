@@ -38,14 +38,17 @@ group :development do
   gem 'quiet_assets'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development, :test do
+  gem 'puma'
+  gem 'guard-rspec'
+  gem 'rspec-rails', "~> 2.14.0"
+  gem 'factory_girl_rails', "~> 4.2.1"
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test do
+  gem 'database_cleaner', "~> 1.1.1"
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :production do
+  gem 'unicorn'
+end
