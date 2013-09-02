@@ -34,6 +34,7 @@ end
 
 group :development do
   gem 'mina'
+  gem 'puma'
   gem 'debugger'
   gem 'quiet_assets'
 end
