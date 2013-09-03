@@ -1,44 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Address -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <b>Agent:</b>
-  <%= @address.agent_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:agent_id) %>:</strong></dt>
+  <dd><%= @address.agent_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:postcode) %>:</strong></dt>
+  <dd><%= @address.postcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:town) %>:</strong></dt>
+  <dd><%= @address.town %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:county) %>:</strong></dt>
+  <dd><%= @address.county %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @address.country %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address1) %>:</strong></dt>
+  <dd><%= @address.address1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address2) %>:</strong></dt>
+  <dd><%= @address.address2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address3) %>:</strong></dt>
+  <dd><%= @address.address3 %></dd>
+</dl>
 
-<p>
-  <b>Postcode:</b>
-  <%= @address.postcode %>
-</p>
-
-<p>
-  <b>Address1:</b>
-  <%= @address.address1 %>
-</p>
-
-<p>
-  <b>Address2:</b>
-  <%= @address.address2 %>
-</p>
-
-<p>
-  <b>Address3:</b>
-  <%= @address.address3 %>
-</p>
-
-<p>
-  <b>Town:</b>
-  <%= @address.town %>
-</p>
-
-<p>
-  <b>County:</b>
-  <%= @address.county %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%= @address.country %>
-</p>
-
-<%= link_to 'Edit', edit_agent_address_path(@agent, @address) %> |
-<%= link_to 'Back', agent_addresses_path(@agent) %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              addresses_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_address_path(@address), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              address_path(@address),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

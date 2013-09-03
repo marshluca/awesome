@@ -1,5 +1,5 @@
 Awesome::Application.routes.draw do
-  root "home#index"
+  root "agents#index"
 
   resources :agents do
     resources :addresses
