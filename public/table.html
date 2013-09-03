@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table</title>
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    font-size: 12px;
+    font-family: arial, sans-serif;
+  }
+
+  div.dialog {
+    width: 25em;
+    margin: 10em auto 0 auto;
+    border: 1px solid #CCC;
+    border-radius: 9px;
+    background-color: white;
+    border-color: #BBB #999 #BBB #999;
+    padding: 7px 4em 3em 4em;
+  }
+
+  table {
+    width: 16em;
+    margin: 3em auto 0 auto;
+    border-collapse:collapse;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  tr.italic {
+    font-style: italic;
+  }
+
+  td {
+    width: 50%;
+  }
+
+  td.left {
+    text-align:left;
+  }
+
+  td.right {
+    text-align:right;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="dialog">
+    <table border="1">
+      <tr>
+        <th colspan="2">Employee Overtime Hours</th>
+      </tr>
+      <tr>
+        <td class="left">Anne</td>
+        <td class="right">26</td>
+      </tr>
+      <tr class="italic">
+        <td class="left">Bob</td>
+        <td class="right">3</td>
+      </tr>
+      <tr>
+        <td class="left">Charles</td>
+        <td class="right">28</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
