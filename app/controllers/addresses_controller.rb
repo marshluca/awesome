@@ -67,7 +67,7 @@ class AddressesController < ApplicationController
   def mark
     respond_to do |format|
       if @agent.default_address = @address
-        format.html { redirect_to agent_address_url(@agent, @address), notice: 'Address was successfully marked as default.' }
+        format.html { redirect_to agents_url, notice: 'Address was successfully marked as default.' }
         format.json { head :no_content }
       else
         format.html { render action: 'index' }

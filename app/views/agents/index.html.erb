@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:agent_no) %></th>
       <th><%= model_class.human_attribute_name(:first_name) %></th>
       <th><%= model_class.human_attribute_name(:last_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:default_address_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= agent.agent_no %></td>
         <td><%= agent.first_name %></td>
         <td><%= agent.last_name %></td>
-        <td><%=l agent.created_at %></td>
+        <td><%= agent.default_address %></td>
         <td>
           <%= link_to t('.address', :default => t("helpers.links.address")),
                       agent_addresses_path(agent), :class => 'btn btn-primary btn-mini' %>
