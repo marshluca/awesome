@@ -24,11 +24,11 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              addresses_path, :class => 'btn'  %>
+              agent_addresses_path(@agent), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_address_path(@address), :class => 'btn' %>
+              edit_agent_address_path(@agent, @address), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              address_path(@address),
+              agent_address_path(@agent, @address),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

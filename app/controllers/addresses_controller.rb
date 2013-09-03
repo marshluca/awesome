@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_agent
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, only: [:show, :edit, :update, :destroy, :mark]
 
   # GET /addresses
   # GET /addresses.json
@@ -60,6 +60,21 @@ class AddressesController < ApplicationController
       format.html { redirect_to agent_addresses_url(@agent) }
       format.json { head :no_content }
     end
+  end
+
+  # PUT /addresses/1
+  # PUT /addresses/1.json
+  def mark
+    respond_to do |format|
+      if @agent.default_address = @address
+        format.html { redirect_to agent_address_url(@agent, @address), notice: 'Address was successfully marked as default.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'index' }
+        format.json { render json: @address.errors, status: :unprocessable_entity }
+      end
+    end
+    
   end
 
   private

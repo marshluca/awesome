@@ -2,7 +2,11 @@ Awesome::Application.routes.draw do
   root "agents#index"
 
   resources :agents do
-    resources :addresses
+    resources :addresses do
+      member do
+        put 'mark'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

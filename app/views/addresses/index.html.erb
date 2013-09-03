@@ -32,6 +32,10 @@
         <td><%= address.address3 %></td>
         <td><%=l address.created_at %></td>
         <td>
+          <%= link_to t('.default', :default => t("helpers.links.default")),
+                      mark_agent_address_path(@agent, address),
+                      :method => :put,
+                      :class => 'btn btn-primary btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_agent_address_path(@agent, address), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
