@@ -1,12 +1,10 @@
 <%- model_class = Address -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%= link_to @agent.full_name, @agent %>'s <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:agent_id) %></th>
       <th><%= model_class.human_attribute_name(:postcode) %></th>
       <th><%= model_class.human_attribute_name(:town) %></th>
       <th><%= model_class.human_attribute_name(:county) %></th>
@@ -14,15 +12,12 @@
       <th><%= model_class.human_attribute_name(:address1) %></th>
       <th><%= model_class.human_attribute_name(:address2) %></th>
       <th><%= model_class.human_attribute_name(:address3) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @addresses.each do |address| %>
       <tr>
-        <td><%= link_to address.id, agent_address_path(@agent, address) %></td>
-        <td><%= address.agent_id %></td>
         <td><%= address.postcode %></td>
         <td><%= address.town %></td>
         <td><%= address.county %></td>
@@ -30,12 +25,13 @@
         <td><%= address.address1 %></td>
         <td><%= address.address2 %></td>
         <td><%= address.address3 %></td>
-        <td><%=l address.created_at %></td>
         <td>
           <%= link_to t('.default', :default => t("helpers.links.default")),
                       mark_agent_address_path(@agent, address),
                       :method => :put,
                       :class => 'btn btn-primary btn-mini' %>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      agent_address_path(@agent, address), :class => 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_agent_address_path(@agent, address), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
