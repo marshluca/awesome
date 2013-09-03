@@ -12,4 +12,8 @@ class Agent < ActiveRecord::Base
   def default_address=(address)
     update_attributes default_address_id: address.id
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
