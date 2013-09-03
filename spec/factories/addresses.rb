@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :address do
-    agent_id 1
+    agent
     postcode "MyString"
     address1 "MyText"
     address2 "MyText"

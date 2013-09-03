@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902131312) do
+ActiveRecord::Schema.define(version: 20130903102931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(version: 20130902131312) do
   end
 
   create_table "agents", force: true do |t|
-    t.string   "agent_no",   limit: 50, null: false
-    t.string   "first_name", limit: 50
-    t.string   "last_name",  limit: 50
+    t.string   "agent_no",           limit: 50, null: false
+    t.string   "first_name",         limit: 50
+    t.string   "last_name",          limit: 50
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "default_address_id"
   end
 
 end
