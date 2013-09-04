@@ -15,7 +15,7 @@
 
 #### How to run the test suite
    
-     rspec spec
+     bundle exec rspec spec
 
 #### Services
 
