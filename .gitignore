@@ -9,7 +9,6 @@
 .sass-cache
 .DS_Store
 capybara-*.html
-.rspec
 /.bundle
 /bin
 /config/database.yml
