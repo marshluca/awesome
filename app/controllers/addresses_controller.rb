@@ -5,7 +5,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = @agent.addresses.all
+    @addresses = @agent.addresses
   end
 
   # GET /addresses/1
