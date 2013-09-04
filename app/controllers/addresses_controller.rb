@@ -62,8 +62,8 @@ class AddressesController < ApplicationController
     end
   end
 
-  # PUT /addresses/1
-  # PUT /addresses/1.json
+  # PUT /addresses/1/mark
+  # PUT /addresses/1/mark.json
   def mark
     respond_to do |format|
       if @agent.default_address = @address
@@ -74,7 +74,6 @@ class AddressesController < ApplicationController
         format.json { render json: @address.errors, status: :unprocessable_entity }
       end
     end
-    
   end
 
   private
