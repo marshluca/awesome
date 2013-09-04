@@ -1,33 +1,26 @@
-## README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
 
-* Ruby version
+#### Configuration
 
-- 2.0.0-p195
+     cp config/database.yml.example config/database.yml
 
-* Configuration
+#### Database creation
 
-    cp config/database.yml.example config/database.yml
+     bundle exec rake db:create
 
-* Database creation
+#### Database initialization
 
-    bundle exec rake db:create
+     bundle exec rake db:migrate
 
-* Database initialization
-
-    bundle exec rake db:migrate
-
-* How to run the test suite
+#### How to run the test suite
    
-    rspec spec
+     rspec spec
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Services
 
-    bundle exec rails s puma
+     bundle exec rails s puma
 
-* Deployment instructions
+#### Deployment instructions
 
-    mina deploy to=production
+     mina deploy
